@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Tailwind Template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">    
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 flex justify-between">
+        <div>Free shipping on orders over $50</div>
+        <div>Call us: +880123456789</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 relative">
+            <!-- Brand / Logo -->
+            <div class="text-2xl font-bold text-blue-600 cursor-pointer select-none">MyShop</div>
+
+            <!-- Nav Links -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#" class="hover:text-blue-500 transition">Home</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Shop</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">About</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Contact</a></li>
+            </ul>
+
+            <!-- Search + Cart -->
+            <div class="flex items-center space-x-4">
+                <!-- Search input -->
+                <input type="text" placeholder="Search..."
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+                <!-- Shopping Cart -->
+                <div class="relative group">
+                    <!-- Cart Icon with badge -->
+                    <div class="relative cursor-pointer">
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full select-none">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 .6h11.4a1 1 0 001-.6L17 13M7 13h10" />
+                        </svg>
+                    </div>
+
+                    <!-- Dropdown Cart Preview -->
+                    <div
+                        class="absolute right-[-50px] w-72 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50 pointer-events-auto">
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-3 text-gray-800">Shopping Cart</h3>
+
+                            <!-- Cart Item 1 -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart1/50/50" alt="Product 1"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-700">Product 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                                <p class="font-semibold text-sm text-gray-900">$29.99</p>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart2/50/50" alt="Product 2"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-700">Product 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                                <p class="font-semibold text-sm text-gray-900">$59.98</p>
+                            </div>
+
+                            <div class="border-t pt-3 flex justify-between">
+                                <a href="/cart.html" class="text-blue-600 hover:underline text-sm font-semibold">View
+                                    Cart</a>
+                                <a href="/checkout.html"
+                                    class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm font-semibold">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Shopping Cart -->
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="bg-gray-100 text-gray-800">
+        <div class="container mx-auto px-4 py-10">
+            <h1 class="text-3xl font-bold mb-8">Checkout</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Billing Details -->
+                <div class="bg-white p-6 rounded shadow">
+                    <h2 class="text-xl font-semibold mb-4">Billing Details</h2>
+                    <form action="thankyou.html" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full border rounded px-3 py-2" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Email Address</label>
+                            <input type="email" placeholder="john@example.com"
+                                class="w-full border rounded px-3 py-2" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Phone Number</label>
+                            <input type="tel" placeholder="+880123456789" class="w-full border rounded px-3 py-2" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Address</label>
+                            <input type="text" placeholder="123 Street, City" class="w-full border rounded px-3 py-2" />
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium">City</label>
+                                <input type="text" placeholder="Dhaka" class="w-full border rounded px-3 py-2" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium">Postal Code</label>
+                                <input type="text" placeholder="1200" class="w-full border rounded px-3 py-2" />
+                            </div>
+                        </div>
+
+                        <!-- Delivery Method -->
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Delivery Method</label>
+                            <select class="w-full border rounded px-3 py-2">
+                                <option>Standard - $5.00 (3-5 days)</option>
+                                <option>Express - $10.00 (1-2 days)</option>
+                                <option>Pickup - Free</option>
+                            </select>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Payment Method</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="payment" class="accent-blue-600" checked />
+                                    <span>Cash on Delivery</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="payment" class="accent-blue-600" />
+                                    <span>Credit/Debit Card</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="payment" class="accent-blue-600" />
+                                    <span>Online Payment (Bkash, Nagad, etc.)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <button type="submit"
+                            class="mt-6 w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition">
+                            Place Order
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="bg-white p-6 rounded shadow">
+                    <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+
+                    <!-- Products List -->
+                    <div class="space-y-4 border-b pb-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="https://picsum.photos/seed/item1/50/50" class="w-12 h-12 rounded object-cover"
+                                    alt="Product 1" />
+                                <div>
+                                    <p class="font-medium text-sm">Product Name 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                            </div>
+                            <span class="font-semibold text-sm">$29.99</span>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <img src="https://picsum.photos/seed/item2/50/50" class="w-12 h-12 rounded object-cover"
+                                    alt="Product 2" />
+                                <div>
+                                    <p class="font-medium text-sm">Product Name 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                            </div>
+                            <span class="font-semibold text-sm">$59.98</span>
+                        </div>
+                    </div>
+
+                    <!-- Totals -->
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span>$89.97</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Shipping</span>
+                            <span>$10.00</span>
+                        </div>
+                        <div class="flex justify-between text-base font-bold border-t pt-2">
+                            <span>Total</span>
+                            <span>$99.97</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

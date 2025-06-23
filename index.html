@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Tailwind Template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 flex justify-between">
+        <div>Free shipping on orders over $50</div>
+        <div>Call us: +880123456789</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 relative">
+            <!-- Brand / Logo -->
+            <div class="text-2xl font-bold text-blue-600 cursor-pointer select-none">MyShop</div>
+
+            <!-- Nav Links -->
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#" class="hover:text-blue-500 transition">Home</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Shop</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">About</a></li>
+                <li><a href="#" class="hover:text-blue-500 transition">Contact</a></li>
+            </ul>
+
+            <!-- Search + Cart -->
+            <div class="flex items-center space-x-4">
+                <!-- Search input -->
+                <input type="text" placeholder="Search..."
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+                <!-- Shopping Cart -->
+                <div class="relative group">
+                    <!-- Cart Icon with badge -->
+                    <div class="relative cursor-pointer">
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full select-none">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 .6h11.4a1 1 0 001-.6L17 13M7 13h10" />
+                        </svg>
+                    </div>
+
+                    <!-- Dropdown Cart Preview -->
+                    <div
+                        class="absolute right-[-50px] w-72 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50 pointer-events-auto">
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-3 text-gray-800">Shopping Cart</h3>
+
+                            <!-- Cart Item 1 -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart1/50/50" alt="Product 1"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-700">Product 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                                <p class="font-semibold text-sm text-gray-900">$29.99</p>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart2/50/50" alt="Product 2"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-700">Product 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                                <p class="font-semibold text-sm text-gray-900">$59.98</p>
+                            </div>
+
+                            <div class="border-t pt-3 flex justify-between">
+                                <a href="/cart.html" class="text-blue-600 hover:underline text-sm font-semibold">View
+                                    Cart</a>
+                                <a href="/checkout.html"
+                                    class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm font-semibold">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Shopping Cart -->
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Slider -->
+    <div class="slider mb-8">
+        <div>
+            <img src="https://picsum.photos/seed/slider1/1200/400" alt="Slide 1"
+                class="w-full h-[400px] object-cover rounded">
+        </div>
+        <div>
+            <img src="https://picsum.photos/seed/slider2/1200/400" alt="Slide 2"
+                class="w-full h-[400px] object-cover rounded">
+        </div>
+        <div>
+            <img src="https://picsum.photos/seed/slider3/1200/400" alt="Slide 3"
+                class="w-full h-[400px] object-cover rounded">
+        </div>
+    </div>
+
+
+    <!-- Top Category -->
+    <section class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Top Categories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gray-100 p-6 text-center rounded shadow">Electronics</div>
+                <div class="bg-gray-100 p-6 text-center rounded shadow">Clothing</div>
+                <div class="bg-gray-100 p-6 text-center rounded shadow">Accessories</div>
+                <div class="bg-gray-100 p-6 text-center rounded shadow">Home & Kitchen</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Product -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Best Selling Products</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Product 1 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p1/200/200" class="mb-2 mx-auto" alt="Product 1">
+                    <h3 class="text-lg font-semibold mb-1">Product 1</h3>
+                    <p class="text-blue-500 font-bold mb-3">$29.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p2/200/200" class="mb-2 mx-auto" alt="Product 2">
+                    <h3 class="text-lg font-semibold mb-1">Product 2</h3>
+                    <p class="text-blue-500 font-bold mb-3">$34.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p3/200/200" class="mb-2 mx-auto" alt="Product 3">
+                    <h3 class="text-lg font-semibold mb-1">Product 3</h3>
+                    <p class="text-blue-500 font-bold mb-3">$19.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p4/200/200" class="mb-2 mx-auto" alt="Product 4">
+                    <h3 class="text-lg font-semibold mb-1">Product 4</h3>
+                    <p class="text-blue-500 font-bold mb-3">$49.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p5/200/200" class="mb-2 mx-auto" alt="Product 5">
+                    <h3 class="text-lg font-semibold mb-1">Product 5</h3>
+                    <p class="text-blue-500 font-bold mb-3">$24.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p6/200/200" class="mb-2 mx-auto" alt="Product 6">
+                    <h3 class="text-lg font-semibold mb-1">Product 6</h3>
+                    <p class="text-blue-500 font-bold mb-3">$39.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p7/200/200" class="mb-2 mx-auto" alt="Product 7">
+                    <h3 class="text-lg font-semibold mb-1">Product 7</h3>
+                    <p class="text-blue-500 font-bold mb-3">$31.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/p8/200/200" class="mb-2 mx-auto" alt="Product 8">
+                    <h3 class="text-lg font-semibold mb-1">Product 8</h3>
+                    <p class="text-blue-500 font-bold mb-3">$44.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Banner Section -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <img src="https://picsum.photos/1200/200?blur=2" alt="Promotional Banner"
+                class="rounded shadow w-full object-cover">
+        </div>
+    </section>
+
+
+    <!-- Top Brand -->
+    <section class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Top Brands</h2>
+            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4 items-center">
+                <img src="https://picsum.photos/seed/brand1/100/50" alt="Brand 1" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand1/100/50" alt="Brand 1" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand1/100/50" alt="Brand 1" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand1/100/50" alt="Brand 1" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand2/100/50" alt="Brand 2" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand3/100/50" alt="Brand 3" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand4/100/50" alt="Brand 4" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand5/100/50" alt="Brand 5" class="mx-auto rounded shadow">
+                <img src="https://picsum.photos/seed/brand6/100/50" alt="Brand 6" class="mx-auto rounded shadow">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Feature Products -->
+    <section class="py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-6">Feature Products</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Product 1 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp1/150/150" alt="Feature Product 1"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 1</h3>
+                    <p class="text-blue-500 font-bold mb-3">$49.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp2/150/150" alt="Feature Product 2"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 2</h3>
+                    <p class="text-blue-500 font-bold mb-3">$39.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp3/150/150" alt="Feature Product 3"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 3</h3>
+                    <p class="text-blue-500 font-bold mb-3">$59.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp4/150/150" alt="Feature Product 4"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 4</h3>
+                    <p class="text-blue-500 font-bold mb-3">$29.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp5/150/150" alt="Feature Product 5"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 5</h3>
+                    <p class="text-blue-500 font-bold mb-3">$44.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp6/150/150" alt="Feature Product 6"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 6</h3>
+                    <p class="text-blue-500 font-bold mb-3">$54.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp7/150/150" alt="Feature Product 7"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 7</h3>
+                    <p class="text-blue-500 font-bold mb-3">$34.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white p-4 rounded shadow text-center">
+                    <img src="https://picsum.photos/seed/fp8/150/150" alt="Feature Product 8"
+                        class="mb-2 mx-auto rounded">
+                    <h3 class="text-lg font-semibold mb-1">Feature 8</h3>
+                    <p class="text-blue-500 font-bold mb-3">$64.99</p>
+                    <div class="flex flex-col space-y-2">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-1 rounded">Add to Cart</button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-1 rounded">Buy Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true
+            });
+        });
+    </script>
+</body>
+
+</html>

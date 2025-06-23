@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - MyShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 flex justify-between">
+        <div>Free shipping on orders over $50</div>
+        <div>Call us: +880123456789</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 relative">
+            <div class="text-2xl font-bold text-blue-600 cursor-pointer">MyShop</div>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="#" class="hover:text-blue-500">Home</a></li>
+                <li><a href="#" class="hover:text-blue-500">Shop</a></li>
+                <li><a href="#" class="hover:text-blue-500">About</a></li>
+                <li><a href="#" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..."
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm" />
+
+                <!-- Shopping Cart -->
+                <div class="relative group">
+                    <div class="relative cursor-pointer">
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full select-none">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 .6h11.4a1 1 0 001-.6L17 13M7 13h10" />
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-3 text-gray-800">Shopping Cart</h3>
+
+                            <!-- Cart Items -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart1/50/50" alt="Product 1"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                                <p class="font-semibold text-sm">$29.99</p>
+                            </div>
+
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart2/50/50" alt="Product 2"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                                <p class="font-semibold text-sm">$59.98</p>
+                            </div>
+
+                            <div class="border-t pt-3 flex justify-between">
+                                <a href="/cart.html" class="text-blue-600 hover:underline text-sm font-semibold">View
+                                    Cart</a>
+                                <a href="/checkout.html"
+                                    class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm font-semibold">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Shopping Cart -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Thank You Section -->
+    <section id="invoice-body" class="bg-gray-100 text-gray-800">
+        <div class="max-w-4xl mx-auto p-6 bg-white shadow rounded my-10">
+
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <div class="text-green-500">
+                    <svg class="mx-auto w-16 h-16" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h1 class="text-3xl font-bold mt-4">Thank You for Your Order!</h1>
+                <p class="text-gray-600">Your order has been placed successfully.</p>
+            </div>
+
+            <!-- Info Section -->
+            <div class="grid md:grid-cols-2 gap-6 text-sm mb-6">
+                <div>
+                    <h2 class="font-semibold text-lg mb-2">Billing Information</h2>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Email:</strong> john@example.com</p>
+                    <p><strong>Phone:</strong> +880123456789</p>
+                    <p><strong>Address:</strong> 123 Street, Dhaka, 1200</p>
+                </div>
+                <div>
+                    <h2 class="font-semibold text-lg mb-2">Order Summary</h2>
+                    <p><strong>Order Number:</strong> #123456</p>
+                    <p><strong>Payment:</strong> Cash on Delivery</p>
+                    <p><strong>Delivery:</strong> Express (1-2 Days)</p>
+                    <p><strong>Date:</strong> June 23, 2025</p>
+                </div>
+            </div>
+
+            <!-- Product Table -->
+            <div class="overflow-x-auto mb-6">
+                <table class="w-full text-left text-sm border border-gray-200">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-3 border">Product</th>
+                            <th class="p-3 border">Qty</th>
+                            <th class="p-3 border">Price</th>
+                            <th class="p-3 border">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="p-3 border">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://picsum.photos/seed/p1/40/40" class="w-10 h-10 rounded" />
+                                    <span>Product 1</span>
+                                </div>
+                            </td>
+                            <td class="p-3 border">1</td>
+                            <td class="p-3 border">$29.99</td>
+                            <td class="p-3 border">$29.99</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-3 border">
+                                <div class="flex items-center space-x-2">
+                                    <img src="https://picsum.photos/seed/p2/40/40" class="w-10 h-10 rounded" />
+                                    <span>Product 2</span>
+                                </div>
+                            </td>
+                            <td class="p-3 border">2</td>
+                            <td class="p-3 border">$34.99</td>
+                            <td class="p-3 border">$69.98</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="bg-gray-50">
+                        <tr>
+                            <td colspan="3" class="p-3 text-right font-semibold">Subtotal</td>
+                            <td class="p-3 font-semibold">$99.97</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="p-3 text-right font-semibold">Shipping</td>
+                            <td class="p-3 font-semibold">$10.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="p-3 text-right font-bold">Total</td>
+                            <td class="p-3 font-bold text-green-600">$109.97</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <a href="/" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+                    Continue Shopping
+                </a>
+                <div class="flex gap-3">
+                    <button onclick="printInvoice()" class="bg-gray-300 px-4 py-2 rounded">🖨️ Print</button>
+                    <button onclick="downloadPDF()"
+                        class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">⬇️ Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true
+            });
+        });
+    </script>
+
+    <!-- Print and PDF Scripts -->
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('invoice-body');
+            const opt = {
+                margin: 0.5,
+                filename: 'invoice.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+
+</html>
