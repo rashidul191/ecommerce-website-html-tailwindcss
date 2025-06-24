@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - MyShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 flex justify-between">
+        <div>Free shipping on orders over $50</div>
+        <div>Call us: +880123456789</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 relative">
+            <div class="text-2xl font-bold text-blue-600 cursor-pointer">
+                <a href="index.html">MyShop</a>
+            </div>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+                <li><a href="shop.html" class="hover:text-blue-500">Shop</a></li>
+                <li><a href="#" class="hover:text-blue-500">About</a></li>
+                <li><a href="contact-us.html" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..."
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm" />
+
+                <!-- Shopping Cart -->
+                <div class="relative group">
+                    <div class="relative cursor-pointer">
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full select-none">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 .6h11.4a1 1 0 001-.6L17 13M7 13h10" />
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-3 text-gray-800">Shopping Cart</h3>
+
+                            <!-- Cart Items -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart1/50/50" alt="Product 1"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                                <p class="font-semibold text-sm">$29.99</p>
+                            </div>
+
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart2/50/50" alt="Product 2"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                                <p class="font-semibold text-sm">$59.98</p>
+                            </div>
+
+                            <div class="border-t pt-3 flex justify-between">
+                                <a href="/cart.html" class="text-blue-600 hover:underline text-sm font-semibold">View
+                                    Cart</a>
+                                <a href="/checkout.html"
+                                    class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm font-semibold">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Shopping Cart -->
+                <!-- Login & Register Buttons -->
+                <div class="flex space-x-2">
+                    <a href="login.html"
+                        class="px-4 py-1 text-sm text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                        Login
+                    </a>
+                    <a href="register.html"
+                        class="px-4 py-1 text-sm text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                        Register
+                    </a>
+                </div>
+                <!-- End Login & Register Button -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-blue-600 text-white py-10 text-center">
+        <h1 class="text-3xl font-bold">Shop</h1>
+    </header>
+
+    <section class="py-12 bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-10">
+
+            <!-- Sidebar Filters -->
+            <aside
+                class="w-full md:w-72 bg-white rounded-xl shadow-md p-6 sticky top-20 self-start max-h-[calc(100vh-5rem)] overflow-auto">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">Filter Products</h2>
+
+                <!-- Category Filter -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-3 text-gray-700 border-b border-gray-200 pb-2">Categories</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="form-checkbox text-blue-600" />
+                                <span class="ml-2">Electronics</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="form-checkbox text-blue-600" />
+                                <span class="ml-2">Clothing</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="form-checkbox text-blue-600" />
+                                <span class="ml-2">Home & Garden</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="form-checkbox text-blue-600" />
+                                <span class="ml-2">Books</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="form-checkbox text-blue-600" />
+                                <span class="ml-2">Sports</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-medium mb-3 text-gray-700 border-b border-gray-200 pb-2">Price Range</h3>
+                    <div class="flex space-x-4">
+                        <input type="number" placeholder="Min"
+                            class="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        <input type="number" placeholder="Max"
+                            class="w-1/2 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                </div>
+
+                <button
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    Apply Filters
+                </button>
+            </aside>
+
+            <!-- Product Grid -->
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product Card Example -->
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-5 flex flex-col justify-between">
+                    <img src="https://picsum.photos/seed/fp1/300/300" alt="Feature Product 1"
+                        class="w-full h-48 object-cover rounded-md mb-4" />
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Feature 1</h3>
+                    <p class="text-blue-600 font-bold mb-4">$49.99</p>
+                    <div class="flex space-x-3">
+                        <button
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md font-medium transition">
+                            Add to Cart
+                        </button>
+                        <button
+                            class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-md font-medium transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+              
+
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="container mx-auto px-6 md:px-12 mt-12 flex justify-center space-x-3">
+            <button class="px-4 py-2 border rounded-md text-gray-500 cursor-not-allowed opacity-50" disabled>
+                Prev
+            </button>
+            <button class="px-4 py-2 border rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+                aria-current="page">
+                1
+            </button>
+            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-200 transition">
+                2
+            </button>
+            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-200 transition">
+                3
+            </button>
+            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-200 transition">
+                4
+            </button>
+            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-200 transition">
+                5
+            </button>
+            <button class="px-4 py-2 border rounded-md text-gray-700 hover:bg-gray-200 transition">
+                Next
+            </button>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true
+            });
+        });
+    </script>
+
+    <!-- Print and PDF Scripts -->
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('invoice-body');
+            const opt = {
+                margin: 0.5,
+                filename: 'invoice.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+
+</html>

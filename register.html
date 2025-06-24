@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank You - MyShop</title>
+    <title>Register - MyShop</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
     <!-- Add the slick-theme.css if you want default styling -->
@@ -110,106 +110,71 @@
         </div>
     </nav>
 
-    <!-- Thank You Section -->
-    <section id="invoice-body" class="bg-gray-100 text-gray-800">
-        <div class="max-w-4xl mx-auto p-6 bg-white shadow rounded my-10">
+    <section class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-            <!-- Header -->
-            <div class="text-center mb-8">
-                <div class="text-green-500">
-                    <svg class="mx-auto w-16 h-16" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <h1 class="text-3xl font-bold mt-4">Thank You for Your Order!</h1>
-                <p class="text-gray-600">Your order has been placed successfully.</p>
+        <div class="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
+            <div class="text-center mb-6">
+                <h1 class="text-3xl font-bold text-blue-600">Create an Account</h1>
+                <p class="text-gray-600 text-sm">Join us and start shopping today!</p>
             </div>
 
-            <!-- Info Section -->
-            <div class="grid md:grid-cols-2 gap-6 text-sm mb-6">
+            <form action="#" method="POST" class="space-y-4">
                 <div>
-                    <h2 class="font-semibold text-lg mb-2">Billing Information</h2>
-                    <p><strong>Name:</strong> John Doe</p>
-                    <p><strong>Email:</strong> john@example.com</p>
-                    <p><strong>Phone:</strong> +880123456789</p>
-                    <p><strong>Address:</strong> 123 Street, Dhaka, 1200</p>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
+
                 <div>
-                    <h2 class="font-semibold text-lg mb-2">Order Summary</h2>
-                    <p><strong>Order Number:</strong> #123456</p>
-                    <p><strong>Payment:</strong> Cash on Delivery</p>
-                    <p><strong>Delivery:</strong> Express (1-2 Days)</p>
-                    <p><strong>Date:</strong> June 23, 2025</p>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                    <input type="email" id="email" name="email" required
+                        class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
-            </div>
 
-            <!-- Product Table -->
-            <div class="overflow-x-auto mb-6">
-                <table class="w-full text-left text-sm border border-gray-200">
-                    <thead class="bg-gray-100">
-                        <tr>
-                            <th class="p-3 border">Product</th>
-                            <th class="p-3 border">Qty</th>
-                            <th class="p-3 border">Price</th>
-                            <th class="p-3 border">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-t">
-                            <td class="p-3 border">
-                                <div class="flex items-center space-x-2">
-                                    <img src="https://picsum.photos/seed/p1/40/40" class="w-10 h-10 rounded" />
-                                    <span>Product 1</span>
-                                </div>
-                            </td>
-                            <td class="p-3 border">1</td>
-                            <td class="p-3 border">$29.99</td>
-                            <td class="p-3 border">$29.99</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-3 border">
-                                <div class="flex items-center space-x-2">
-                                    <img src="https://picsum.photos/seed/p2/40/40" class="w-10 h-10 rounded" />
-                                    <span>Product 2</span>
-                                </div>
-                            </td>
-                            <td class="p-3 border">2</td>
-                            <td class="p-3 border">$34.99</td>
-                            <td class="p-3 border">$69.98</td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="bg-gray-50">
-                        <tr>
-                            <td colspan="3" class="p-3 text-right font-semibold">Subtotal</td>
-                            <td class="p-3 font-semibold">$99.97</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="p-3 text-right font-semibold">Shipping</td>
-                            <td class="p-3 font-semibold">$10.00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" class="p-3 text-right font-bold">Total</td>
-                            <td class="p-3 font-bold text-green-600">$109.97</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-
-            <!-- Buttons -->
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <a href="/" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">
-                    Continue Shopping
-                </a>
-                <div class="flex gap-3">
-                    <button onclick="printInvoice()" class="bg-gray-300 px-4 py-2 rounded">🖨️ Print</button>
-                    <button onclick="downloadPDF()"
-                        class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">⬇️ Download PDF</button>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required
+                        class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
                 </div>
+
+                <div>
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm
+                        Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required
+                        class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+                </div>
+
+                <div class="flex items-center text-sm">
+                    <input type="checkbox" id="terms" required class="mr-2 rounded border-gray-300 text-blue-600" />
+                    <label for="terms">
+                        I agree to the
+                        <a href="#" class="text-blue-600 hover:underline">Terms & Conditions</a>
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 font-semibold transition">
+                    Register
+                </button>
+
+                <div class="text-center text-sm text-gray-500 mt-4">
+                    Already have an account?
+                    <a href="/login.html" class="text-blue-600 hover:underline">Login</a>
+                </div>
+            </form>
+
+            <div class="mt-6">
+                <button
+                    class="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5" />
+                    Sign up with Google
+                </button>
             </div>
         </div>
+
     </section>
+
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6">
