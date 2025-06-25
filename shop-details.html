@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - MyShop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <style>
+        .slick-slide img {
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Topbar -->
+    <div class="bg-gray-800 text-white text-sm py-2 px-4 flex justify-between">
+        <div>Free shipping on orders over $50</div>
+        <div>Call us: +880123456789</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 relative">
+            <div class="text-2xl font-bold text-blue-600 cursor-pointer">
+                <a href="index.html">MyShop</a>
+            </div>
+
+            <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+                <li><a href="shop.html" class="hover:text-blue-500">Shop</a></li>
+                <li><a href="#" class="hover:text-blue-500">About</a></li>
+                <li><a href="contact-us.html" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..."
+                    class="border border-gray-300 rounded-md px-3 py-1 text-sm" />
+
+                <!-- Shopping Cart -->
+                <div class="relative group">
+                    <div class="relative cursor-pointer">
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1 rounded-full select-none">2</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.2 6.4a1 1 0 001 .6h11.4a1 1 0 001-.6L17 13M7 13h10" />
+                        </svg>
+                    </div>
+                    <div
+                        class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-3 text-gray-800">Shopping Cart</h3>
+
+                            <!-- Cart Items -->
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart1/50/50" alt="Product 1"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 1</p>
+                                    <p class="text-xs text-gray-500">Qty: 1</p>
+                                </div>
+                                <p class="font-semibold text-sm">$29.99</p>
+                            </div>
+
+                            <div class="flex items-center mb-3">
+                                <img src="https://picsum.photos/seed/cart2/50/50" alt="Product 2"
+                                    class="w-12 h-12 rounded mr-3 object-cover" />
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium">Product 2</p>
+                                    <p class="text-xs text-gray-500">Qty: 2</p>
+                                </div>
+                                <p class="font-semibold text-sm">$59.98</p>
+                            </div>
+
+                            <div class="border-t pt-3 flex justify-between">
+                                <a href="/cart.html" class="text-blue-600 hover:underline text-sm font-semibold">View
+                                    Cart</a>
+                                <a href="/checkout.html"
+                                    class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm font-semibold">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Shopping Cart -->
+                <!-- Login & Register Buttons -->
+                <div class="flex space-x-2">
+                    <a href="login.html"
+                        class="px-4 py-1 text-sm text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white transition">
+                        Login
+                    </a>
+                    <a href="register.html"
+                        class="px-4 py-1 text-sm text-white bg-blue-600 rounded hover:bg-blue-700 transition">
+                        Register
+                    </a>
+                </div>
+                <!-- End Login & Register Button -->
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Product Details Section -->
+    <section class="py-10">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
+            <!-- Image Gallery -->
+            <div>
+                <!-- Main Image -->
+                <div class="border rounded overflow-hidden mb-4 w-[500px] h-[400px] relative">
+                    <img id="mainImage" src="https://picsum.photos/seed/product/400/300" alt="Product Image"
+                        class="w-full h-full object-cover transition duration-300 hover:scale-105 cursor-zoom-in"
+                        onclick="zoomImage(this.src)" />
+                </div>
+
+                <!-- Thumbnail Images -->
+                <div class="flex space-x-2">
+                    <img src="https://picsum.photos/seed/1/100/100"
+                        class="thumb border rounded cursor-pointer hover:opacity-75" onclick="changeImage(this)" />
+                    <img src="https://picsum.photos/seed/2/100/100"
+                        class="thumb border rounded cursor-pointer hover:opacity-75" onclick="changeImage(this)" />
+                    <img src="https://picsum.photos/seed/3/100/100"
+                        class="thumb border rounded cursor-pointer hover:opacity-75" onclick="changeImage(this)" />
+                    <img src="https://picsum.photos/seed/4/100/100"
+                        class="thumb border rounded cursor-pointer hover:opacity-75" onclick="changeImage(this)" />
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-3">Premium Product Name</h2>
+                <p class="text-sm text-gray-500 mb-2">SKU: <span class="font-medium">SKU12345</span></p>
+                <p class="text-sm text-gray-500 mb-2">Category: <span class="font-medium">Electronics</span></p>
+                <p class="text-sm text-gray-500 mb-2">Brand: <span class="font-medium">SmartTech</span></p>
+
+                <div class="mb-4">
+                    <p class="text-xl text-gray-800 font-semibold line-through">$69.99</p>
+                    <p class="text-2xl text-blue-600 font-bold">$59.99</p>
+                </div>
+
+                <p class="mb-4 text-gray-600">
+                    High-quality product with long durability. Great for daily use, lightweight and modern design.
+                </p>
+
+                <!-- Size and Quantity -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Size</label>
+                        <select class="border rounded px-3 py-2 w-full">
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Quantity</label>
+                        <input type="number" min="1" value="1" class="border rounded px-3 py-2 w-full" />
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex space-x-4 mb-6">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">Add to Cart</button>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zoom Modal -->
+    <div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="relative">
+            <button onclick="closeZoom()" class="absolute top-2 right-2 text-white text-xl">×</button>
+            <img id="zoomedImg" src="" alt="Zoomed Image" class="max-w-[90vw] max-h-[90vh] rounded shadow" />
+        </div>
+    </div>
+
+
+
+
+    <!-- Product Description -->
+    <section class="container mx-auto px-4 py-10">
+        <h3 class="text-2xl font-semibold mb-4">Product Description</h3>
+        <p class="text-gray-700 leading-relaxed">
+            This is a detailed product description. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora,
+            dolorem. It covers materials, design, use cases, and more.
+        </p>
+    </section>
+
+    <!-- Related Products Slider -->
+    <section class="bg-gray-100 py-10">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-6">Related Products</h3>
+            <div class="flex overflow-x-auto space-x-4 pb-4">
+                <!-- Related Item -->
+                <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+                    <img src="https://picsum.photos/seed/r1/150/150" alt="" class="mx-auto mb-2" />
+                    <h4 class="font-medium mb-1">Product A</h4>
+                    <p class="text-blue-600 font-bold mb-2">$39.99</p>
+                    <button class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">View</button>
+                </div>
+                <!-- Repeat for more -->
+                <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+                    <img src="https://picsum.photos/seed/r2/150/150" alt="" class="mx-auto mb-2" />
+                    <h4 class="font-medium mb-1">Product B</h4>
+                    <p class="text-blue-600 font-bold mb-2">$44.99</p>
+                    <button class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">View</button>
+                </div>
+                <div class="min-w-[200px] bg-white rounded shadow p-4 text-center">
+                    <img src="https://picsum.photos/seed/r3/150/150" alt="" class="mx-auto mb-2" />
+                    <h4 class="font-medium mb-1">Product C</h4>
+                    <p class="text-blue-600 font-bold mb-2">$29.99</p>
+                    <button class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">View</button>
+                </div>
+                <!-- Add more items if needed -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 MyShop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true
+            });
+        });
+    </script>
+
+    <!-- Print and PDF Scripts -->
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('invoice-body');
+            const opt = {
+                margin: 0.5,
+                filename: 'invoice.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+    <!-- Image Swap Script -->
+    <script>
+        function changeImage(el) {
+            const main = document.getElementById('mainImage');
+            main.src = el.src;
+        }
+    </script>
+
+</body>
+
+</html>
